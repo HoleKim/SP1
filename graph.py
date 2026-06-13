@@ -16,6 +16,7 @@ def application(environ, start_response):
             ('Content-Length', str(len(response_body)))
         ])
         return [response_body]
+
     else:
         d = parse_qs(environ['QUERY_STRING'])
         a = d.get('a', [''])[0]
